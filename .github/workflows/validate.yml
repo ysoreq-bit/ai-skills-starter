@@ -1,0 +1,51 @@
+name: Validate starter repository
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Parse YAML entry points
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for path in [Path('INDEX.yaml'), Path('ROUTER.yaml'), Path('registry/issues.yaml')]:
+              text = path.read_text(encoding='utf-8')
+              if not text.strip():
+                  raise SystemExit(f'{path} is empty')
+          PY
+      - name: Confirm required files exist
+        run: |
+          test -f AGENTS.md
+          test -f INDEX.yaml
+          test -f ROUTER.yaml
+          test -f LICENSE
+          test -f THIRD_PARTY_NOTICES.md
+          test -f templates/SKILL_TEMPLATE.md
+      - name: Check valid fixture
+        run: python scripts/validate.py tests/fixtures/valid-layout.tex
+      - name: Confirm invalid page flow is rejected
+        run: |
+          if python scripts/validate.py tests/fixtures/page-break-in-minipage.tex; then
+            echo 'Expected the validator to reject the page-flow fixture.'
+            exit 1
+          fi
+      - name: Confirm strict spacing review is rejected
+        run: |
+          if python scripts/validate.py --strict tests/fixtures/manual-spacing.tex; then
+            echo 'Expected strict mode to reject the manual-spacing fixture.'
+            exit 1
+          fi
