@@ -1,0 +1,122 @@
+version: 0.1.0
+policy: load only the smallest relevant set
+
+routes:
+  complex_artifact:
+    triggers:
+      - substantial document
+      - repository change
+      - study resource
+      - data artifact
+      - multi-step technical deliverable
+    load:
+      - skills/workflows/requirements-first-artifact.md
+      - skills/core/source-integrity.md
+      - skills/core/verification-before-completion.md
+
+  page_by_page_document_teaching:
+    triggers:
+      - user asks to learn or review a document sequentially
+      - user controls when to advance
+    load:
+      - skills/workflows/page-by-page-document-teaching.md
+      - skills/core/source-integrity.md
+    excludes:
+      - whole-document summary
+      - isolated passage explanation
+
+  technical_debugging:
+    triggers:
+      - unexpected behavior
+      - failed build or test
+      - broken tool or workflow
+      - unexplained artifact defect
+    load:
+      - skills/core/systematic-debugging.md
+      - skills/core/verification-before-completion.md
+    optional:
+      - domain-specific debugging Skill
+      - registry/issues.yaml
+
+  completion_claim:
+    triggers:
+      - about to claim complete, correct, fixed, compiled, verified, or ready
+    load:
+      - skills/core/verification-before-completion.md
+
+  public_method_review:
+    triggers:
+      - consider a public Skill, prompt, workflow, template, script, plugin, or tool
+    load:
+      - skills/meta/research-intake.md
+      - skills/meta/skill-evaluation.md
+      - research/catalog.md
+      - THIRD_PARTY_NOTICES.md
+
+  skill_creation_or_revision:
+    triggers:
+      - create, revise, compare, benchmark, or promote a Skill
+    load:
+      - skills/meta/skill-evaluation.md
+      - skills/meta/research-intake.md
+      - templates/SKILL_TEMPLATE.md
+
+  multi_source_research:
+    triggers:
+      - comparison
+      - recommendation
+      - landscape review
+      - investigation based on multiple sources
+    load:
+      - skills/research/multi-source-synthesis.md
+      - skills/core/source-integrity.md
+
+  durable_knowledge_capture:
+    triggers:
+      - reusable decision
+      - method or lesson
+      - repeated correction
+      - FAQ, project rule, or known issue
+    load:
+      - skills/meta/knowledge-capture.md
+      - skills/meta/skill-evaluation.md
+
+  latex_debugging:
+    triggers:
+      - LaTeX compile or layout failure
+      - page break, spacing, float, RTL, TikZ, or overfull problem
+    load:
+      - skills/core/systematic-debugging.md
+      - skills/core/source-integrity.md
+      - skills/latex/layout-debugging.md
+      - skills/latex/vertical-spacing-diagnosis.md
+      - skills/core/verification-before-completion.md
+      - registry/issues.yaml
+
+  iterative_graphics:
+    triggers:
+      - complex TikZ drawing
+      - diagram reconstruction
+      - repeated visual correction
+      - mixed RTL and LTR graphics
+    load:
+      - skills/latex/iterative-visual-reconstruction.md
+      - skills/latex/mixed-direction-tikz.md
+      - templates/latex/layered-diagram.tex
+      - templates/latex/rtl-node.tex
+    retain:
+      - general methods
+      - minimal templates
+      - failure modes and successful corrections
+    do_not_prioritize:
+      - permanent storage of a subject-specific final drawing
+
+  source_dependent_answer:
+    triggers:
+      - official source or solution
+      - quotation or page reference
+      - measurement or provenance
+      - reconstructed answer based on source material
+    load:
+      - skills/core/source-integrity.md
+      - skills/core/verification-before-completion.md

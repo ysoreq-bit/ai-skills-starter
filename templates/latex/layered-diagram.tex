@@ -1,0 +1,26 @@
+% Minimal reusable skeleton for layered TikZ reconstruction.
+% Keep project-specific content outside this template.
+% Requires: \usetikzlibrary{positioning,arrows.meta}
+
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  object/.style={draw, rounded corners, inner sep=4pt, align=center},
+  connector/.style={-{Latex}, thick},
+  annotation/.style={inner sep=1.5pt, align=center}
+]
+  % Layer 1: global frame and named coordinates.
+  \coordinate (origin) at (0,0);
+
+  % Layer 2: primary objects.
+  \node[object] (left-object) at (0,0) {Left};
+  \node[object, right=2cm of left-object] (right-object) {Right};
+
+  % Layer 3: connectors.
+  \draw[connector] (left-object.east) -- (right-object.west);
+
+  % Layer 4: labels and annotations.
+  \node[annotation, above=2mm of left-object.north] {Label};
+
+  % Layer 5: optional secondary details.
+\end{tikzpicture}

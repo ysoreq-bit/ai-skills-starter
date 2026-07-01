@@ -1,0 +1,12 @@
+version: 0.1.0
+issues:
+  - id: ISSUE-LATEX-001
+    title: page-starts-mid-page-or-partial-width
+    status: reference-pattern
+    related_skill: skills/latex/layout-debugging.md
+    note: Confirm the root cause from the exact failing source before recording a fix.
+  - id: ISSUE-LATEX-002
+    title: unexplained-vertical-spacing
+    status: reference-pattern
+    related_skill: skills/latex/vertical-spacing-diagnosis.md
+    note: Classify the gap before changing spacing.

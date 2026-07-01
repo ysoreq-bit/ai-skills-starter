@@ -1,0 +1,14 @@
+% Example node styles for mixed-direction TikZ documents.
+% Replace wrappers with the direction commands used by the host document.
+
+\tikzset{
+  starter rtl text/.style={align=right, text width=#1},
+  starter rtl text/.default=3cm,
+  starter ltr text/.style={align=left},
+  starter math label/.style={inner sep=1.5pt}
+}
+
+% Usage examples:
+% \node[starter rtl text=4cm] at (0,0) {RTL prose};
+% \node[starter ltr text] at (0,-1) {English text};
+% \node[starter math label] at (0,-2) {$E_F$};

@@ -1,0 +1,70 @@
+repository:
+  name: ai-skills-starter
+  version: 0.1.0
+  canonical_branch: main
+  public: true
+  template_repository: true
+  updated: 2026-07-01
+
+entrypoints:
+  agent_protocol: AGENTS.md
+  router: ROUTER.yaml
+  capability_registry: registry/capabilities.md
+  issue_registry: registry/issues.yaml
+  setup: docs/SETUP.md
+  customization: docs/CUSTOMIZATION.md
+  architecture: docs/ARCHITECTURE.md
+  research_catalog: research/catalog.md
+  tool_catalog: tools/catalog.md
+  third_party_notices: THIRD_PARTY_NOTICES.md
+
+capabilities:
+  - id: CORE-001
+    name: source_integrity
+    path: skills/core/source-integrity.md
+  - id: CORE-002
+    name: systematic_debugging
+    path: skills/core/systematic-debugging.md
+  - id: CORE-003
+    name: verification_before_completion
+    path: skills/core/verification-before-completion.md
+  - id: WORKFLOW-001
+    name: requirements_first_artifact
+    path: skills/workflows/requirements-first-artifact.md
+  - id: WORKFLOW-002
+    name: page_by_page_document_teaching
+    path: skills/workflows/page-by-page-document-teaching.md
+  - id: META-001
+    name: research_intake
+    path: skills/meta/research-intake.md
+  - id: META-002
+    name: skill_design_and_evaluation
+    path: skills/meta/skill-evaluation.md
+  - id: META-003
+    name: durable_knowledge_capture
+    path: skills/meta/knowledge-capture.md
+  - id: RESEARCH-001
+    name: multi_source_synthesis
+    path: skills/research/multi-source-synthesis.md
+  - id: LATEX-001
+    name: iterative_visual_reconstruction
+    path: skills/latex/iterative-visual-reconstruction.md
+  - id: LATEX-002
+    name: mixed_direction_tikz
+    path: skills/latex/mixed-direction-tikz.md
+  - id: LATEX-003
+    name: layout_debugging
+    path: skills/latex/layout-debugging.md
+  - id: LATEX-004
+    name: vertical_spacing_diagnosis
+    path: skills/latex/vertical-spacing-diagnosis.md
+
+status_policy:
+  default_new_skill: draft
+  verification_requires:
+    - original_case
+    - independent_new_case
+    - negative_case
+  stable_requires:
+    - repeated_success
+    - no_known_regression
