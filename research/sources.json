@@ -1,0 +1,60 @@
+{
+  "updated": "2026-07-01",
+  "sources": [
+    {
+      "id": "anthropic-skill-creator",
+      "repository": "anthropics/skills",
+      "path": "skills/skill-creator",
+      "license": "Apache-2.0",
+      "use_mode": "adapted-method"
+    },
+    {
+      "id": "superpowers",
+      "repository": "obra/superpowers",
+      "license": "MIT",
+      "use_mode": "adapted-method"
+    },
+    {
+      "id": "spec-kit",
+      "repository": "github/spec-kit",
+      "license": "MIT",
+      "use_mode": "adapted-method"
+    },
+    {
+      "id": "openai-plugins",
+      "repository": "openai/plugins",
+      "license": "file-scope-review-needed",
+      "use_mode": "concept-reference"
+    },
+    {
+      "id": "markitdown",
+      "repository": "microsoft/markitdown",
+      "license": "MIT",
+      "use_mode": "optional-tool"
+    },
+    {
+      "id": "docling",
+      "repository": "docling-project/docling",
+      "license": "MIT",
+      "use_mode": "optional-tool"
+    },
+    {
+      "id": "pandoc",
+      "repository": "jgm/pandoc",
+      "license": "GPL-2.0-or-later",
+      "use_mode": "optional-tool"
+    },
+    {
+      "id": "texlab",
+      "repository": "latex-lsp/texlab",
+      "license": "GPL-3.0",
+      "use_mode": "optional-tool"
+    },
+    {
+      "id": "diff-pdf",
+      "repository": "vslavik/diff-pdf",
+      "license": "GPL-2.0",
+      "use_mode": "optional-tool"
+    }
+  ]
+}
