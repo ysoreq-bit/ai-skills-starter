@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local evaluation artifacts
+.plugin-eval/
+coverage/
+.pytest_cache/
+
+# LaTeX build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Editors and operating systems
+.vscode/settings.local.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and private overlays
+.env
+.env.*
+!.env.example
+private/
+profiles/private/
+private-sources/
