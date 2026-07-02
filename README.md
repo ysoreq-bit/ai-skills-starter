@@ -10,6 +10,8 @@ Usually, nothing about how you write requests. You continue speaking naturally. 
 
 ## Start in three steps
 
+**Hebrew setup guide:** [`docs/ONBOARDING_HE.md`](docs/ONBOARDING_HE.md)
+
 ### 1. Create your own copy
 
 Choose one:
