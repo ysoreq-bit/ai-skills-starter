@@ -53,6 +53,8 @@ tools/                  Optional free tools and selection guidance
 - systematic debugging;
 - verification before completion claims;
 - page-by-page document teaching;
+- evidence-mapped course summaries with assessment-informed emphasis;
+- course solution playbooks, SOPs, decision trees, and detailed flowcharts;
 - multi-source research synthesis;
 - durable knowledge capture;
 - external Skill and tool intake;
@@ -75,4 +77,4 @@ The original material in this repository is licensed under the Apache License 2.
 
 ## Status
 
-Version `0.1.0` is the first public starter release. The system is intentionally small enough to understand, customize, and test.
+Version `0.1.1` adds evidence-mapped course summaries and course solution playbooks with detailed flowcharts. The system remains intentionally small enough to understand, customize, and test.
