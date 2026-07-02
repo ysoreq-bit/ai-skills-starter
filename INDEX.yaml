@@ -1,10 +1,10 @@
 repository:
   name: ai-skills-starter
-  version: 0.1.0
+  version: 0.1.1
   canonical_branch: main
   public: true
   template_repository: true
-  updated: 2026-07-01
+  updated: 2026-07-02
 
 entrypoints:
   agent_protocol: AGENTS.md
@@ -34,6 +34,12 @@ capabilities:
   - id: WORKFLOW-002
     name: page_by_page_document_teaching
     path: skills/workflows/page-by-page-document-teaching.md
+  - id: WORKFLOW-003
+    name: evidence_mapped_course_summary
+    path: skills/workflows/evidence-mapped-course-summary.md
+  - id: WORKFLOW-004
+    name: course_solution_playbook
+    path: skills/workflows/course-solution-playbook.md
   - id: META-001
     name: research_intake
     path: skills/meta/research-intake.md
