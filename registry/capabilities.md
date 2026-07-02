@@ -7,6 +7,8 @@
 | CORE-003 | Verification before completion | Global | Candidate | `skills/core/verification-before-completion.md` |
 | WORKFLOW-001 | Requirements-first artifact | Workflow | Candidate | `skills/workflows/requirements-first-artifact.md` |
 | WORKFLOW-002 | Page-by-page document teaching | Study workflow | Candidate | `skills/workflows/page-by-page-document-teaching.md` |
+| WORKFLOW-003 | Evidence-mapped course summary | Study workflow | Candidate | `skills/workflows/evidence-mapped-course-summary.md` |
+| WORKFLOW-004 | Course solution playbook and flowcharts | Study workflow | Candidate | `skills/workflows/course-solution-playbook.md` |
 | META-001 | External method and tool intake | Meta | Candidate | `skills/meta/research-intake.md` |
 | META-002 | Skill design and evaluation | Meta | Candidate | `skills/meta/skill-evaluation.md` |
 | META-003 | Durable knowledge capture | Meta | Candidate | `skills/meta/knowledge-capture.md` |
