@@ -1,6 +1,6 @@
 repository:
   name: ai-skills-starter
-  version: 0.1.1
+  version: 0.1.2
   canonical_branch: main
   public: true
   template_repository: true
@@ -40,6 +40,12 @@ capabilities:
   - id: WORKFLOW-004
     name: course_solution_playbook
     path: skills/workflows/course-solution-playbook.md
+  - id: WORKFLOW-005
+    name: single_question_error_remediation
+    path: skills/workflows/single-question-error-remediation.md
+  - id: WORKFLOW-006
+    name: full_exam_diagnostic_review
+    path: skills/workflows/full-exam-diagnostic-review.md
   - id: META-001
     name: research_intake
     path: skills/meta/research-intake.md
