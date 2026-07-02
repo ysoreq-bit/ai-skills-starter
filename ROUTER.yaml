@@ -1,4 +1,4 @@
-version: 0.1.1
+version: 0.1.2
 policy: load only the smallest relevant set
 
 routes:
@@ -57,6 +57,40 @@ routes:
       - one isolated exercise
       - theory-only summary
       - open-ended task with no repeatable procedure
+
+  single_question_error_remediation:
+    triggers:
+      - analyze one failed exam or practice question
+      - diagnose a learner's incorrect solution
+      - identify why the learner became stuck
+      - build targeted remediation to prevent a repeated mistake
+    load:
+      - skills/workflows/single-question-error-remediation.md
+      - skills/core/source-integrity.md
+      - skills/core/verification-before-completion.md
+    excludes:
+      - final answer only
+      - full-exam pattern analysis
+      - grading without a learning objective
+
+  full_exam_diagnostic_review:
+    triggers:
+      - analyze a completed full exam
+      - compare a learner's exam with official solutions
+      - detect recurring weaknesses across an exam
+      - create a post-exam remediation plan
+    load:
+      - skills/workflows/full-exam-diagnostic-review.md
+      - skills/workflows/single-question-error-remediation.md
+      - skills/core/source-integrity.md
+      - skills/core/verification-before-completion.md
+    optional:
+      - skills/workflows/evidence-mapped-course-summary.md
+      - skills/workflows/course-solution-playbook.md
+    excludes:
+      - one isolated question
+      - score calculation only
+      - answer-key comparison without diagnosis
 
   technical_debugging:
     triggers:
