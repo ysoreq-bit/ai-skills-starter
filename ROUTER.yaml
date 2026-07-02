@@ -1,4 +1,4 @@
-version: 0.1.0
+version: 0.1.1
 policy: load only the smallest relevant set
 
 routes:
@@ -24,6 +24,39 @@ routes:
     excludes:
       - whole-document summary
       - isolated passage explanation
+
+  evidence_mapped_course_summary:
+    triggers:
+      - whole-course theory summary
+      - comprehensive study summary from lectures and tutorials
+      - assessment-informed course summary
+      - reliable course reference with source mapping
+    load:
+      - skills/workflows/evidence-mapped-course-summary.md
+      - skills/research/multi-source-synthesis.md
+      - skills/core/source-integrity.md
+      - skills/core/verification-before-completion.md
+    excludes:
+      - isolated concept explanation
+      - page-by-page document teaching
+      - one-document summary with no course-wide synthesis
+
+  course_solution_playbook:
+    triggers:
+      - course-wide solution procedures
+      - SOPs for recurring problem types
+      - decision trees for selecting solution methods
+      - detailed course solution flowcharts
+    load:
+      - skills/workflows/course-solution-playbook.md
+      - skills/workflows/evidence-mapped-course-summary.md
+      - skills/research/multi-source-synthesis.md
+      - skills/core/source-integrity.md
+      - skills/core/verification-before-completion.md
+    excludes:
+      - one isolated exercise
+      - theory-only summary
+      - open-ended task with no repeatable procedure
 
   technical_debugging:
     triggers:
