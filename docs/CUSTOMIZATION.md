@@ -67,6 +67,18 @@ private-sources/
 
 A public starter should not contain the contents of these files. Keep the private layer in a private repository or local workspace.
 
+## Compatible private study memory
+
+For recurring academic work, a private memory companion can hold distilled course maps, current state, verified notes, solution methods, exam patterns, and learner records. Keep the companion generic at the interface level:
+
+- expose an agent protocol, index, router, course profile, and current state;
+- route agents to the smallest relevant course records;
+- keep raw sources in the authorized source system;
+- require explicit opt-in before any write;
+- report exactly which paths changed after an authorized save.
+
+Do not add private repository paths, course contents, account names, Drive identifiers, or learner details to this public starter.
+
 ## Review schedule
 
 Review active Skills when:

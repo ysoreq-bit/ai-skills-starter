@@ -41,7 +41,21 @@ For a complex task:
 
 Do not load the entire repository for a simple, unrelated request.
 
-## 4. Instruction priority
+## 4. Optional private study memory
+
+A user may authorize access to a separate private study-memory repository. Treat that repository as an optional companion memory layer, not as part of this public method repository.
+
+When a substantial study task has authorized access to a compatible private memory repository:
+
+1. read that repository's agent protocol, index, and router;
+2. identify the active course or study context;
+3. read only the active course profile, current state, and the smallest routed records needed for the task;
+4. return to the original authorized source layer when memory is missing, stale, uncertain, contradictory, or not precise enough;
+5. keep private memory contents, private paths, learner information, and source material out of this public repository.
+
+Repository access is not write authorization. Writing to a private memory repository requires an explicit user request to save, remember, add, update, or otherwise change that repository in the current conversation.
+
+## 5. Instruction priority
 
 When instructions conflict, use this order:
 
@@ -61,7 +75,7 @@ Within one level:
 - an authoritative source overrides an example;
 - uncertainty must be reported rather than hidden.
 
-## 5. Verification before completion
+## 6. Verification before completion
 
 Before claiming that work is complete, correct, fixed, compiled, verified, or ready:
 
@@ -73,7 +87,7 @@ Before claiming that work is complete, correct, fixed, compiled, verified, or re
 
 Compilation does not prove visual fidelity. A linter does not prove a build. A generated success message does not replace inspection of the artifact or diff.
 
-## 6. Capturing reusable knowledge
+## 7. Capturing reusable knowledge
 
 Capture new knowledge only when the task produces a reusable method, repeated correction, expensive insight, known failure mode, verified improvement, template, or test.
 
@@ -89,7 +103,7 @@ Before promoting knowledge, record:
 
 Do not promote a one-off preference or final project output merely because it required effort.
 
-## 7. Skill lifecycle
+## 8. Skill lifecycle
 
 - `draft` — extracted idea, not validated;
 - `candidate` — initial implementation or one successful case;
@@ -97,19 +111,19 @@ Do not promote a one-off preference or final project output merely because it re
 - `stable` — repeated successful use across relevant contexts;
 - `deprecated` — replaced but retained for history.
 
-## 8. Privacy and source material
+## 9. Privacy and source material
 
 Do not commit secrets, credentials, private keys, private medical information, confidential documents, or copyrighted source collections.
 
 Prefer derived methods, original reusable code, small authorized or synthetic fixtures, redacted examples, hashes, and source pointers.
 
-## 9. External methods and tools
+## 10. External methods and tools
 
 Before adopting a public Skill, prompt, script, plugin, or tool, use `skills/meta/research-intake.md`.
 
 Do not import collections wholesale. Review source, license, dependencies, assumptions, activation boundaries, security behavior, and baseline performance.
 
-## 10. Repository changes
+## 11. Repository changes
 
 When authorized to write:
 

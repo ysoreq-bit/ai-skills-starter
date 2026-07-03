@@ -63,6 +63,18 @@ The public repository contains generic methods, synthetic fixtures, templates, a
 
 A private user copy may add project profiles, personal preferences, source pointers, and private issue history. Private source documents should remain outside the public repository and should be included only when necessary and authorized.
 
+## Private study-memory companion
+
+Some users may keep course memory in a separate private repository. In that arrangement:
+
+- the source layer remains the authority for exact wording, diagrams, pages, official solutions, and source versions;
+- the private memory layer stores compact, source-linked, searchable course and learner records;
+- this public method layer stores only reusable routing and verification methods.
+
+The public layer must not require a fixed private repository name, local path, account, clone, or credential. It may describe the interface expected from a compatible memory companion, but it must not contain private course names, learner records, source contents, Drive identifiers, or private links.
+
+Read access to a private memory companion is optional and selective. Write access is separately gated: a useful insight, verified claim, or approved answer may become a capture candidate, but it is not written unless the user explicitly authorizes repository writing in the current conversation.
+
 ## Agent portability
 
 Different tools discover instructions differently. This repository therefore uses ordinary Markdown and YAML rather than depending on one proprietary runtime.
