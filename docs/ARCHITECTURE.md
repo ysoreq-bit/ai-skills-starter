@@ -63,6 +63,27 @@ The public repository contains generic methods, synthetic fixtures, templates, a
 
 A private user copy may add project profiles, personal preferences, source pointers, and private issue history. Private source documents should remain outside the public repository and should be included only when necessary and authorized.
 
+## Private capability incubator
+
+Users may also maintain a separate private AI-capabilities repository for workflows, prompts, routing experiments, evaluations, and personal operating rules. Treat that repository as the default place to improve private behavior quickly.
+
+This public repository is the sanitized publication layer. Promote from a private capability incubator only after applying `docs/CAPABILITY_PROMOTION.md`: remove private details, replace real examples with safe examples, validate activation and non-activation cases, and keep the public diff reviewable.
+
+The public layer must not depend on access to the private incubator. If the incubator is unavailable, public Skills should still work from their checked-in instructions and public fixtures.
+
+## Private study-memory companion
+
+Some users may keep course memory in a separate private repository. In that arrangement:
+
+- the source layer remains the authority for exact wording, diagrams, pages, official solutions, and source versions;
+- the private memory layer stores compact, source-linked, searchable course and learner records;
+- a private capability incubator may refine user-specific workflows;
+- this public method layer stores only sanitized reusable routing and verification methods.
+
+The public layer must not require a fixed private repository name, local path, account, clone, or credential. It may describe the interface expected from a compatible memory companion, but it must not contain private course names, learner records, source contents, Drive identifiers, or private links.
+
+Read access to a private memory companion is optional and selective. Write access is separately gated: a useful insight, verified claim, or approved answer may become a capture candidate, but it is not written unless the user explicitly authorizes repository writing in the current conversation.
+
 ## Agent portability
 
 Different tools discover instructions differently. This repository therefore uses ordinary Markdown and YAML rather than depending on one proprietary runtime.

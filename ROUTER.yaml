@@ -1,4 +1,4 @@
-version: 0.1.2
+version: 0.1.3
 policy: load only the smallest relevant set
 
 routes:
@@ -92,6 +92,31 @@ routes:
       - score calculation only
       - answer-key comparison without diagnosis
 
+  private_study_memory_routing:
+    triggers:
+      - substantial study task with authorized private study memory access
+      - work in a course that is already mapped in a private memory companion
+      - use prior verified course knowledge
+      - locate course source pointers through a private memory companion
+      - analyze a course question, exam, mistake, or solution method with memory support
+      - build a course summary or playbook with memory support
+    load:
+      - docs/STUDY_MEMORY_INTERFACE.md
+      - skills/workflows/private-study-memory-routing.md
+      - skills/core/source-integrity.md
+      - skills/core/verification-before-completion.md
+    optional:
+      - skills/workflows/evidence-mapped-course-summary.md
+      - skills/workflows/course-solution-playbook.md
+      - skills/workflows/single-question-error-remediation.md
+      - skills/workflows/full-exam-diagnostic-review.md
+    excludes:
+      - non-study task
+      - no authorized access to a compatible private memory repository
+      - simple answer that does not need durable memory
+      - user asks to rely only on material supplied in the current conversation
+      - private memory loading would add irrelevant context
+
   technical_debugging:
     triggers:
       - unexpected behavior
@@ -144,9 +169,18 @@ routes:
       - method or lesson
       - repeated correction
       - FAQ, project rule, or known issue
+      - capture candidate for a private memory repository
     load:
       - skills/meta/knowledge-capture.md
       - skills/meta/skill-evaluation.md
+    write_gate:
+      requires:
+        - explicit_user_authorization_in_current_conversation
+        - final_or_distilled_version
+        - canonical_record_search_completed
+      distinguishes:
+        - capture_candidate
+        - authorized_capture
 
   latex_debugging:
     triggers:
