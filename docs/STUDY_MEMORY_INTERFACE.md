@@ -8,9 +8,12 @@ This document defines a generic interface for an optional private study-memory c
 
 1. **Source layer:** Google Drive, uploaded files, official course sites, and other authorized systems remain authoritative for exact wording, diagrams, pages, official solutions, and original versions.
 2. **Memory layer:** a private study-memory repository stores compact, distilled, source-linked course and learner records.
-3. **Method layer:** this public repository stores reusable routing, verification, and workflow methods.
+3. **Private capability incubator:** optional private workflows, prompts, evaluations, and routing experiments refine how the agent works for the user.
+4. **Public method layer:** this public repository stores sanitized reusable routing, verification, and workflow methods.
 
 The memory layer assists source-aware work. It is not an automatic substitute for the source layer.
+
+Private capability work can improve how memory is used, but it does not authorize writing to memory and it should not copy memory records into public files. Public promotion follows `docs/CAPABILITY_PROMOTION.md`.
 
 ## Expected companion structure
 

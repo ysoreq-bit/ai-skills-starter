@@ -15,6 +15,7 @@ entrypoints:
   customization: docs/CUSTOMIZATION.md
   architecture: docs/ARCHITECTURE.md
   study_memory_interface: docs/STUDY_MEMORY_INTERFACE.md
+  capability_promotion: docs/CAPABILITY_PROMOTION.md
   research_catalog: research/catalog.md
   tool_catalog: tools/catalog.md
   third_party_notices: THIRD_PARTY_NOTICES.md

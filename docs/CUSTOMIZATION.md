@@ -67,6 +67,26 @@ private-sources/
 
 A public starter should not contain the contents of these files. Keep the private layer in a private repository or local workspace.
 
+## Private capability incubator
+
+Use a private AI-capabilities repository as the main workspace for behavior experiments, personal routing, draft Skills, and workflow variants that are not ready for public release.
+
+Suggested structure:
+
+```text
+AGENTS.md
+INDEX.yaml
+ROUTER.yaml
+docs/
+  ARCHITECTURE.md
+  PROMOTION_POLICY.md
+incubator/
+evaluations/
+promoted/
+```
+
+Promote into this public starter only after the method is general, sanitized, evaluated, and small enough to review. Use `docs/CAPABILITY_PROMOTION.md` as the promotion gate. Keep private examples, account-specific paths, learner details, and course-specific working notes in the private incubator.
+
 ## Compatible private study memory
 
 For recurring academic work, a private memory companion can hold distilled course maps, current state, verified notes, solution methods, exam patterns, and learner records. Keep the companion generic at the interface level:
