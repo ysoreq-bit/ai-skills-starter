@@ -1,10 +1,10 @@
 repository:
   name: ai-skills-starter
-  version: 0.1.2
+  version: 0.1.3
   canonical_branch: main
   public: true
   template_repository: true
-  updated: 2026-07-02
+  updated: 2026-07-04
 
 entrypoints:
   agent_protocol: AGENTS.md
@@ -46,6 +46,9 @@ capabilities:
   - id: WORKFLOW-006
     name: full_exam_diagnostic_review
     path: skills/workflows/full-exam-diagnostic-review.md
+  - id: WORKFLOW-007
+    name: cumulative_exam_lessons_sheet
+    path: skills/workflows/cumulative-exam-lessons-sheet.md
   - id: META-001
     name: research_intake
     path: skills/meta/research-intake.md
