@@ -57,6 +57,7 @@ tools/                  Optional free tools and selection guidance
 - course solution playbooks, SOPs, decision trees, and detailed flowcharts;
 - single-question error diagnosis, conceptual repair, and transfer testing;
 - full-exam diagnostic review, pattern detection, and prioritized remediation planning;
+- cumulative exam lessons and recall sheets that preserve existing artifacts and integrate follow-up misunderstandings;
 - multi-source research synthesis;
 - durable knowledge capture;
 - external Skill and tool intake;
@@ -79,4 +80,4 @@ The original material in this repository is licensed under the Apache License 2.
 
 ## Status
 
-Version `0.1.2` adds single-question error remediation and full-exam diagnostic review workflows. The system remains intentionally small enough to understand, customize, and test.
+Version `0.1.3` adds a cumulative post-exam lessons-sheet workflow and a reusable XeLaTeX template extracted from a validated two-exam probability study process. The system remains intentionally small enough to understand, customize, and test.

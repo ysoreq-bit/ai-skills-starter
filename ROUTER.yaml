@@ -1,4 +1,4 @@
-version: 0.1.2
+version: 0.1.3
 policy: load only the smallest relevant set
 
 routes:
@@ -91,6 +91,30 @@ routes:
       - one isolated question
       - score calculation only
       - answer-key comparison without diagnosis
+
+  cumulative_exam_lessons_sheet:
+    triggers:
+      - create a cumulative lessons sheet from reviewed exams
+      - update a running exam mistakes and recall document
+      - integrate exam errors and follow-up explanations into an existing study artifact
+      - preserve post-exam lessons, recognition cues, sanity checks, and strengths for future review
+    load:
+      - skills/workflows/cumulative-exam-lessons-sheet.md
+      - skills/workflows/full-exam-diagnostic-review.md
+      - skills/workflows/single-question-error-remediation.md
+      - skills/workflows/requirements-first-artifact.md
+      - skills/core/source-integrity.md
+      - skills/core/verification-before-completion.md
+    optional:
+      - templates/latex/cumulative-exam-lessons-sheet.tex
+      - skills/workflows/course-solution-playbook.md
+      - skills/latex/layout-debugging.md
+      - skills/latex/vertical-spacing-diagnosis.md
+    excludes:
+      - score calculation only
+      - one isolated explanation with no persistent artifact request
+      - general course summary unrelated to learner errors
+      - unreviewed exam with no reliable diagnosis
 
   technical_debugging:
     triggers:
