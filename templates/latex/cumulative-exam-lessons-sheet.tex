@@ -1,0 +1,305 @@
+% !TEX program = xelatex
+\documentclass[12pt,a4paper]{article}
+
+% Reusable Hebrew/RTL starting point for WORKFLOW-007.
+% Replace placeholders and preserve user-specific macros when updating an existing artifact.
+
+% ---------- Languages and fonts ----------
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{hebrew}
+\setotherlanguage{english}
+
+\setmainfont{Arimo}
+\setsansfont{Arimo}
+\newfontfamily\hebrewfont[Script=Hebrew]{Arimo}
+\newfontfamily\hebrewfontsf[Script=Hebrew]{Arimo}
+\newfontfamily\englishfont{Arimo}
+\newfontfamily\englishfontsf{Arimo}
+
+% ---------- Mathematics ----------
+\usepackage{amsmath,amssymb,mathtools}
+
+% ---------- Layout ----------
+\usepackage[a4paper,top=2.0cm,bottom=2.0cm,left=2.2cm,right=2.2cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.13}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{needspace}
+\usepackage{enumitem}
+\usepackage{tabularx,booktabs,array}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{2em}
+\setlist[itemize]{rightmargin=1.25em,leftmargin=0pt,itemsep=0.25em,topsep=0.3em}
+\setlist[enumerate]{rightmargin=1.5em,leftmargin=0pt,itemsep=0.25em,topsep=0.3em}
+
+% ---------- Colors ----------
+\definecolor{navy}{HTML}{17324D}
+\definecolor{bluegray}{HTML}{EAF1F7}
+\definecolor{softred}{HTML}{FFF3F4}
+\definecolor{deepred}{HTML}{8A2633}
+\definecolor{softgreen}{HTML}{F2F8F4}
+\definecolor{deepgreen}{HTML}{2D6245}
+\definecolor{graytext}{HTML}{4E5963}
+\definecolor{linegray}{HTML}{C9D2DA}
+
+% ---------- Headings ----------
+\newcommand{\runsection}[1]{%
+  \clearpage
+  \section*{\textcolor{navy}{#1}}%
+  \addcontentsline{toc}{section}{#1}%
+}
+
+\newcommand{\runsubsection}[1]{%
+  \Needspace{0.18\textheight}%
+  \subsection*{\textcolor{navy}{#1}}%
+  \addcontentsline{toc}{subsection}{#1}%
+}
+
+% ---------- Direction helpers ----------
+\newcommand{\en}[1]{\textenglish{#1}}
+\newcommand{\m}[1]{\LR{\ensuremath{#1}}}
+
+% ---------- Reusable content units ----------
+\newenvironment{contentunit}[1]{%
+  \Needspace{0.27\textheight}%
+  \par\medskip\noindent
+  \begin{minipage}{\linewidth}
+  \setlength{\parskip}{0.45em}%
+  \colorbox{navy}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \raggedleft\color{white}\bfseries #1%
+    }%
+  }%
+  \par\vspace{0.45em}
+}{%
+  \par\vspace{0.2em}
+  {\color{navy}\rule{\linewidth}{0.6pt}}%
+  \end{minipage}
+  \par\medskip
+}
+
+\newenvironment{rednote}[1]{%
+  \Needspace{0.15\textheight}%
+  \par\smallskip\noindent
+  \begin{minipage}{\linewidth}
+  \setlength{\parskip}{0.35em}%
+  \colorbox{softred}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \raggedleft\textcolor{deepred}{\bfseries #1}%
+    }%
+  }%
+  \par\vspace{0.35em}
+  \begingroup\leftskip=1em\rightskip=1em
+}{%
+  \par\endgroup
+  {\color{deepred}\rule{\linewidth}{0.5pt}}%
+  \end{minipage}
+  \par\smallskip
+}
+
+\newenvironment{strengthnote}[1]{%
+  \Needspace{0.15\textheight}%
+  \par\smallskip\noindent
+  \begin{minipage}{\linewidth}
+  \setlength{\parskip}{0.35em}%
+  \colorbox{softgreen}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \raggedleft\textcolor{deepgreen}{\bfseries #1}%
+    }%
+  }%
+  \par\vspace{0.35em}
+  \begingroup\leftskip=1em\rightskip=1em
+}{%
+  \par\endgroup
+  {\color{deepgreen}\rule{\linewidth}{0.5pt}}%
+  \end{minipage}
+  \par\smallskip
+}
+
+\newenvironment{noticebox}{%
+  \Needspace{0.12\textheight}%
+  \par\medskip\noindent
+  \begin{minipage}{\linewidth}
+  {\color{linegray}\rule{\linewidth}{0.6pt}}%
+  \par\vspace{0.35em}
+  \begingroup\leftskip=1em\rightskip=1em
+}{%
+  \par\endgroup\vspace{0.2em}
+  {\color{linegray}\rule{\linewidth}{0.6pt}}%
+  \end{minipage}
+  \par\medskip
+}
+
+\newcommand{\keyrule}[1]{%
+  \par\smallskip
+  \begin{center}
+    \fcolorbox{navy}{white}{%
+      \parbox{0.9\linewidth}{\centering\bfseries\textcolor{navy}{#1}}%
+    }
+  \end{center}
+  \smallskip
+}
+
+\pagestyle{plain}
+
+\begin{document}
+\begin{RTL}
+
+% ============================================================
+% Cover
+% ============================================================
+\thispagestyle{empty}
+\vspace*{2.2cm}
+
+\begin{center}
+  {\fontsize{25}{30}\selectfont\bfseries\textcolor{navy}{דף שינונים ולקחים מצטבר}}\\[0.7em]
+  {\Large \textbf{שם הקורס כאן}}\\[2.2em]
+
+  \fcolorbox{navy}{bluegray}{%
+    \parbox{0.72\linewidth}{%
+      \centering
+      \textbf{מבחנים שנכללו במסמך}\\[0.35em]
+      שם מבחן ראשון; שם מבחן שני\\[0.75em]
+      \textbf{גרסה:} 0.1 \qquad
+      \textbf{עדכון אחרון:} תאריך
+    }%
+  }
+\end{center}
+
+\vfill
+\begin{noticebox}
+\textbf{מטרת המסמך:} לשמור רק לקחים בעלי ערך למבחן הבא: כללי זיהוי, טעויות שורש, בדיקות תקינות, שיטות קצרות, הצלחות שבריריות וחוזקות יציבות. זה אינו סיכום מלא של הקורס.
+\end{noticebox}
+\vfill
+
+\begin{center}
+\small\textcolor{graytext}{המסמך מיועד לקימפול באמצעות \en{XeLaTeX}.}
+\end{center}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% ============================================================
+% How to use
+% ============================================================
+\section*{\textcolor{navy}{איך משתמשים בדף}}
+\addcontentsline{toc}{section}{איך משתמשים בדף}
+
+\begin{contentunit}{סדר החזרה לפני מבחן}
+\begin{enumerate}
+  \item עוברים על מפת הזיהוי המהירה.
+  \item קוראים יחידות שסומנו כפערים עמוקים או הצלחות שבריריות.
+  \item עונים בעל פה על שאלות השינון.
+  \item פותרים שאלת העברה אחת מכל משפחה חשובה.
+\end{enumerate}
+\end{contentunit}
+
+% ============================================================
+% Recognition map
+% ============================================================
+\runsection{מפת זיהוי מהירה}
+
+\begingroup
+\hbadness=10000
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{center}
+\begin{tabularx}{0.97\textwidth}{>{\raggedleft\arraybackslash}p{0.25\textwidth} >{\raggedleft\arraybackslash}p{0.30\textwidth} >{\raggedleft\arraybackslash}X}
+\toprule
+\textbf{מה רואים בשאלה} & \textbf{הכלי הראשון} & \textbf{הבדיקה שאסור לדלג עליה} \\
+\midrule
+תיאור משפחת שאלה & הכלי או הייצוג הראשון & תנאי, תחום, סימן או בדיקת סבירות \\
+תיאור משפחת שאלה נוספת & הכלי או הייצוג הראשון & הבדיקה המכריעה \\
+\bottomrule
+\end{tabularx}
+\end{center}
+\normalsize
+\endgroup
+
+% ============================================================
+% Exam-specific section template
+% ============================================================
+\runsection{מבחן 1 — שם המבחן}
+
+\begin{noticebox}
+\textbf{מעמד התוכן:} ציינו אילו מסקנות נבדקו מול פתרון רשמי, אילו שוחזרו ממקורות הקורס ואילו הן הסבר עצמאי.
+\end{noticebox}
+
+\begin{contentunit}{שם המושג או משפחת השאלה}
+\textbf{הפער שהתגלָה:} תיאור מדויק וקצר של נקודת הסטייה הראשונה או של ההצלחה השברירית.
+
+\textbf{כלל או משפט:} כתבו את הכלל המדויק ואת תנאי השימוש בו.
+
+\textbf{סדר הפעולות:}
+\begin{enumerate}
+  \item שלב זיהוי.
+  \item שלב בחירת השיטה.
+  \item שלב חישוב או הוכחה.
+  \item בדיקת תקינות.
+\end{enumerate}
+
+\keyrule{כלל קצר, כללי וזכיר שאינו תלוי במספרים של השאלה המקורית.}
+\end{contentunit}
+
+\begin{rednote}{מלכודת או בדיקת תקינות}
+כתבו מה היה יכול לעצור את הטעות בזמן: טווח הסתברות, סימן, תחום תמיכה, יחידות, תנאי משפט או מקרה קצה.
+\end{rednote}
+
+\begin{strengthnote}{חוזקה יציבה או הצלחה שברירית}
+כתבו את הראיה החיובית. אם התשובה הייתה נכונה אך הדרך לא יציבה, ציינו זאת במפורש וכתבו מה עדיין צריך לחזק.
+\end{strengthnote}
+
+% ============================================================
+% Cumulative sections
+% ============================================================
+\runsection{לקחים מצטברים ובדיקות תקינות}
+
+\begin{contentunit}{שאלת הפתיחה לפני חישוב}
+\begin{enumerate}
+  \item מה המשתנה או הביטוי סופר, מודד או מתאר?
+  \item איזה ייצוג הופך את האירוע או הכמות לפשוטים?
+  \item מה תחום התמיכה או תנאי התקפות?
+  \item איזו בדיקת סבירות יכולה לפסול תוצאה בלתי אפשרית?
+\end{enumerate}
+\end{contentunit}
+
+\runsection{ידע שכבר עובד וצריך לשמר}
+
+\begin{strengthnote}{שם החוזקה}
+תארו ראיות חוזרות או ראיה חזקה לכך שהזיהוי, השיטה והביצוע יציבים.
+\end{strengthnote}
+
+\runsection{שאלות שינון מהירות}
+
+\begin{contentunit}{שם הנושא}
+\textbf{שאלה:} שאלה קצרה שבודקת את כלל הזיהוי, התנאי או בדיקת התקינות.\\
+\textbf{תשובה:} תשובה קצרה ומדויקת.
+\end{contentunit}
+
+% ============================================================
+% Future update protocol
+% ============================================================
+\runsection{תבנית לעדכון לאחר מבחן נוסף}
+
+\begin{contentunit}{מבחן חדש}
+לכל מבחן עתידי מוסיפים:
+\begin{itemize}
+  \item שם המבחן ותאריך הבדיקה;
+  \item מקור רשמי או מעמד הפתרון;
+  \item טעויות שורש והשלכות נגררות;
+  \item אי-הבנות שהתגלו בשיחה שלאחר הבדיקה;
+  \item הצלחות שבריריות וחוזקות יציבות;
+  \item בדיקות תקינות שהיה כדאי להפעיל;
+  \item שאלות שינון חדשות;
+  \item עדכון מפת הזיהוי רק כאשר נוסף כלל כללי בעל ערך חוזר.
+\end{itemize}
+\end{contentunit}
+
+\end{RTL}
+\end{document}
